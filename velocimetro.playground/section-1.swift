@@ -24,20 +24,33 @@ class Auto{
     func cambioDeVelocidad() -> (actual : Int, velocidadEnCadena: String){
         var mensaje = ""
         
-        let actual = velocidad.rawValue
+        
+        var actual = velocidad.rawValue
+
+        
+        
         switch velocidad{
+        
+            
         case .Apagado:
             velocidad = .VelocidadBaja
             mensaje = "Apagado"
+            
         case .VelocidadBaja:
             velocidad = .VelocidadMedia
             mensaje = "Velocidad baja"
+            
         case .VelocidadMedia:
             velocidad = .VelocidadAlta
             mensaje = "Velocidad media"
+        
         case .VelocidadAlta:
-            velocidad = .Apagado
+            velocidad = .VelocidadMedia
             mensaje = "Velocidad alta"
+            
+       
+         
+        
         }
         return(actual, mensaje)
     }
@@ -49,8 +62,6 @@ for i in 1...20{
     let resultado = auto.cambioDeVelocidad()
     print("\(i). \(resultado.actual), \(resultado.velocidadEnCadena)\n")
 }
-
-
 
 
 
